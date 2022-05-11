@@ -1,0 +1,10 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "module": "AMD",
+    "lib": ["es5", "es6", "dom"],
+    "rootDir": "./src/",
+    "outFile": "./build/build.js",
+    "downlevelIteration": true
+  }
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+<script>var exports = {};</script>
+
+<script src="build/build.js"></script>
+
+<script>
+    function copy() {
+        navigator.clipboard.writeText(document.getElementById('result').innerText)
+    }
+</script>
+
+<button onclick="copy()">copy</button>
+
+<p id="result"></p>
+
+
+</body>
+</html>
