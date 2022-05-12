@@ -11,11 +11,16 @@
     function copy() {
         navigator.clipboard.writeText(document.getElementById('result').innerText)
     }
+    function copyClean() {
+        navigator.clipboard.writeText(document.getElementById('resultClean').innerText)
+    }
 </script>
 
 <button onclick="copy()">copy</button>
+<button onclick="copyClean()">copy clean</button>
 
 <p id="result"></p>
+<p id="resultClean"></p>
 
 
 </body>

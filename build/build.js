@@ -655,6 +655,7 @@ window.addEventListener('load', function () {
             var dimacs = problem.toDIMACS();
             console.log(dimacs);
             document.getElementById('result').innerText = dimacs;
+            document.getElementById('resultClean').innerText = problem.toCleanString();
         });
     });
 });
@@ -885,6 +886,25 @@ define("Problem", ["require", "exports"], function (require, exports) {
                     if (clauses_1_1 && !clauses_1_1.done && (_a = clauses_1["return"])) _a.call(clauses_1);
                 }
                 finally { if (e_14) throw e_14.error; }
+            }
+            return dimacsFormat;
+        };
+        Problem.prototype.toCleanString = function () {
+            var e_15, _a;
+            var clauses = this.problem.clauses;
+            var dimacsFormat = "";
+            try {
+                for (var clauses_2 = __values(clauses), clauses_2_1 = clauses_2.next(); !clauses_2_1.done; clauses_2_1 = clauses_2.next()) {
+                    var clause = clauses_2_1.value;
+                    dimacsFormat += "".concat(clause.toDIMACS(), "\r\n");
+                }
+            }
+            catch (e_15_1) { e_15 = { error: e_15_1 }; }
+            finally {
+                try {
+                    if (clauses_2_1 && !clauses_2_1.done && (_a = clauses_2["return"])) _a.call(clauses_2);
+                }
+                finally { if (e_15) throw e_15.error; }
             }
             return dimacsFormat;
         };

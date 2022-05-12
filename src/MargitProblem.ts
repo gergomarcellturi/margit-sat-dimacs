@@ -7,6 +7,7 @@ window.addEventListener('load', () => {
             const dimacs = problem.toDIMACS();
             console.log(dimacs)
             document.getElementById('result').innerText = dimacs;
+            document.getElementById('resultClean').innerText = problem.toCleanString();
         });
     });
 })

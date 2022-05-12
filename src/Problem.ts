@@ -11,6 +11,13 @@ export class Problem<T> {
         return dimacsFormat;
     }
 
+    public toCleanString(): string {
+        const {clauses} = this.problem;
+        let dimacsFormat = ``;
+        for (const clause of clauses) dimacsFormat += `${clause.toDIMACS()}\r\n`;
+        return dimacsFormat;
+    }
+
     static async of<T>(o: T & { constructClauses: () => Promise<void>, clauses: Clause[] }) {
         await o.constructClauses()
         const prob = new Problem();
